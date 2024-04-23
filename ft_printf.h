@@ -5,4 +5,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 
+void	ft_putnbr(int nb);
+
 #endif

@@ -33,6 +33,8 @@ void	ft_printf(const char *str, ...)
 			str++;
 		}
 		if (*str++ == '%')
+		{
+
 			if (*str == 'c')
 			{
 				ft_putchar(va_arg(args, int));
@@ -45,14 +47,14 @@ void	ft_printf(const char *str, ...)
 			}
 			else if (*str == 'd')
 			{
-				ft_itoa(va_arg(args, int));
+				ft_putnbr(va_arg(args, int));
 				str++;
 			}
 			else
 				str++;
+		}
 	}
 	va_end(args);
-	ft_putstr(str);
 }
 
 int	main(void)
@@ -60,6 +62,6 @@ int	main(void)
 	// ft_printf("%c%c%c%c%c%c%c%c%c%c%c%c%c", 'H', 'e', 'l', 'l', 'o', ' ',
 	// 	'W', 'o', 'r', 'l', 'd', '!', '\0');
 	// ft_printf("%s\n", "Hello, World!");
-	ft_printf("%d\n", 123456789);
+	// ft_printf("%d", 12345678);
 	return (0);
 }

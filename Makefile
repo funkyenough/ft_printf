@@ -1,5 +1,5 @@
 NAME = libftprintf.a
-SRC = ft_printf.c
+SRC = ft_printf.c ft_itoa.c
 OBJS = $(SRC:.c=%.o)
 AR = ar rcs
 RM = rm -f
@@ -11,8 +11,8 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-%.c : %.o
-	$(CC) $(CFLAGS) -c $<
+%.o : %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	$(RM) $(OBJS)
 
