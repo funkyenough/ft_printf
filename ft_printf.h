@@ -5,6 +5,10 @@
 # include <stdarg.h>
 # include <unistd.h>
 
+void	ft_putchar(int c);
+void	ft_putstr(const char *str);
 void	ft_putnbr(int nb);
+void	ft_putptr(unsigned long long num);
+void	ft_printptr(void *p);
 
 #endif

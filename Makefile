@@ -1,6 +1,6 @@
-NAME = libftprintf.a
-SRC = ft_printf.c ft_itoa.c
-OBJS = $(SRC:.c=%.o)
+NAME = ft_printf
+SRC = ft_putchar.c ft_putstr.c ft_putnbr.c ft_putptr.c ft_printptr.c ft_printf.c
+OBJS = $(SRC:.c=.o)
 AR = ar rcs
 RM = rm -f
 CC = cc
@@ -9,10 +9,14 @@ CFLAGS = -Wall -Werror -Wextra
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+archive : $(OBJS)
+	$(AR) $(NAME) $(OBJS)
+
 clean:
 	$(RM) $(OBJS)
 
