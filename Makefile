@@ -1,5 +1,5 @@
 NAME = ft_printf
-SRC = ft_putchar.c ft_putstr.c ft_putnbr.c ft_putptr.c ft_printptr.c ft_printf.c
+SRC = ft_putchar.c ft_putstr.c ft_putnbr.c ft_putunbr.c ft_putptr.c ft_printptr.c ft_printf.c ft_put_lower_hex.c
 OBJS = $(SRC:.c=.o)
 AR = ar rcs
 RM = rm -f
