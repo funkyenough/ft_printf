@@ -1,3 +1,4 @@
+#include "./libft/libft.h"
 #include "ft_printf.h"
 
 void	ft_putnbr_recursion(int nb)
