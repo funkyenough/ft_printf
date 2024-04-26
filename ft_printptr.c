@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:35:11 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/23 15:46:59 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/04/26 06:34:30 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void	ft_printptr(void *p)
 {
-	int i;
 	unsigned long long ptr;
 
 	ptr = (uintptr_t)p;
-	i = 0;
 	ft_putstr("0x");
 	if (ptr == 0)
 	{

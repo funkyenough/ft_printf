@@ -10,6 +10,7 @@ void	ft_putnbr(int nb);
 void	ft_putunbr(unsigned int nb);
 void	ft_putptr(unsigned long long num);
 void	ft_printptr(void *p);
-void	ft_put_lower_hex(int i);
+void	ft_put_lower_hex(unsigned int i);
+void	ft_putnbr_base(int nbr);
 
 #endif

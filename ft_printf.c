@@ -25,7 +25,7 @@ void	ft_printf(const char *str, ...)
 			else if (*(str + 1) == 'u')
 				ft_putunbr(va_arg(args, unsigned int));
 			else if (*(str + 1) == 'x')
-				ft_put_lower_hex(va_arg(args, int));
+				ft_putnbr_base(va_arg(args, unsigned int));
 			// else if (*(str + 1) == 'X')
 			// 	ft_put_upper_hex(va_arg(args, unsigned int));
 			else if (*(str + 1) == '%')
@@ -49,5 +49,7 @@ int	main(void)
 	// ft_printf("%u\n", 4294967295);
 	ft_printf("%x\n", -12345);
 	printf("%x\n", -12345);
+	ft_printf("%x\n", 123450000);
+	printf("%x\n", 123450000);
 	return (0);
 }
