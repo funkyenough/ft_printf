@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 EXEC = ft_printf
-SRC = ft_putchar.c ft_putstr.c ft_putnbr.c ft_putunbr.c ft_putptr.c ft_printptr.c ft_printf.c ft_put_lower_hex.c ft_putnbr_base.c
+SRC = ft_putchar.c ft_putstr.c ft_putnbr.c ft_putunbr.c ft_putptr.c ft_printptr.c ft_printf.c ft_putnbr_hex.c ft_putnbr.c
 OBJS = $(SRC:.c=.o)
 AR = ar
 ARFLAGS = rcs
@@ -13,8 +13,8 @@ LIBFT = libft.a
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	make bonus -C $(LIBFT_PATH)/$(LIBFT)
-	cp $(LIBFT) .
+	make bonus -C $(LIBFT_PATH)
+	cp $(LIBFT_PATH)/$(LIBFT) .
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 %.o : %.c
@@ -30,6 +30,6 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME) $(EXEC)
+	$(RM) $(NAME) $(EXEC) $(LIBFT)
 
 re: fclean all
