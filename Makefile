@@ -1,35 +1,53 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/05/07 13:30:00 by yinhong           #+#    #+#              #
+#    Updated: 2024/05/07 15:28:39 by yinhong          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
+LIBFT = libft.a
 EXEC = ft_printf
-SRC = ft_putchar.c ft_putstr.c ft_putnbr.c ft_putunbr.c ft_putptr.c ft_printptr.c ft_printf.c ft_putnbr_hex.c ft_putnbr.c
-OBJS = $(SRC:.c=.o)
+
+SRCDIR = src/
+LIBFTDIR = ./libft
+# Fix later because apparently I cannot use wildcard
+SRCS = $(wildcard $(SRCDIR)*.c)
+OBJS = $(SRCS:.c=.o)
+
 AR = ar
 ARFLAGS = rcs
-RM = rm -f
+
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-LIBFT_PATH = ./libft
-LIBFT = libft.a
+
+RM = rm -f
+
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	make bonus -C $(LIBFT_PATH)
-	cp $(LIBFT_PATH)/$(LIBFT) .
+	make -C $(LIBFTDIR)
+	cp $(LIBFTDIR)/$(LIBFT) .
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
-%.o : %.c
+$(SRCDIR)%.o : $(SRCDIR)%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 exec : $(OBJS)
+	@pwd
 	$(CC) $(CFLAGS) -o $(EXEC) $(OBJS) $(LIBFT)
-
-$(LIBFT) :
-	make -C $(LIBFT_PATH)/$(LIBFT) all
 
 clean:
 	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME) $(EXEC) $(LIBFT)
+	make -C $(LIBFTDIR) fclean
 
 re: fclean all

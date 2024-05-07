@@ -1,29 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_print_unbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 15:31:40 by yinhong           #+#    #+#             */
-/*   Updated: 2024/04/23 15:52:47 by yinhong          ###   ########.fr       */
+/*   Created: 2024/05/07 13:29:59 by yinhong           #+#    #+#             */
+/*   Updated: 2024/05/07 14:56:13 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putptr(unsigned long long num)
+int		ft_nbr_len(int i);
+void	ft_put_unbr(unsigned int nb);
+void	ft_putunbr_recursion(unsigned int nb);
+
+int	ft_print_unbr(unsigned int n)
 {
-	if (num >= 16)
+	ft_put_unbr(n);
+	return (ft_nbr_len(n));
+}
+
+void	ft_put_unbr(unsigned int nb)
+{
+	if (nb == 0)
 	{
-		ft_putptr(num / 16);
-		ft_putptr(num % 16);
+		write(1, "0", 1);
+		return ;
 	}
-	else
+	ft_putunbr_recursion(nb);
+}
+
+void	ft_putunbr_recursion(unsigned int nb)
+{
+	char	mod;
+
+	if (nb != 0)
 	{
-		if (0 <= num && num <= 9)
-			ft_putchar(num + '0');
-		else
-			ft_putchar(num - 10 + 'a');
+		mod = nb % 10 + '0';
+		ft_putunbr_recursion(nb / 10);
+		write(1, &mod, 1);
 	}
 }
