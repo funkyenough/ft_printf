@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:55 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/09 11:12:49 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 11:24:00 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	ft_hex_len(int nbr)
 	}
 	return (len);
 }
+
 static void	ft_put_hex(int nbr, int is_upper)
 {
 	int				digits;
