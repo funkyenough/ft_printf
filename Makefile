@@ -6,14 +6,13 @@
 #    By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/07 13:30:00 by yinhong           #+#    #+#              #
-#    Updated: 2024/05/09 10:21:22 by yinhong          ###   ########.fr        #
+#    Updated: 2024/05/09 10:24:02 by yinhong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 EXEC = ft_printf
 
-SRCDIR = src/
 # Fix later because apparently I cannot use wildcard
 SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
@@ -46,6 +45,6 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME) $(EXEC) $(LIBFT)
+	$(RM) $(NAME) $(EXEC)
 
 re: fclean all

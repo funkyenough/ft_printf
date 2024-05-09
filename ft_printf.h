@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:53 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/08 16:04:04 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 10:06:03 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # define PREFIX_LENGTH 2
 # define HEX_LENGTH 16
 
-# include "libft/libft.h"
 # include <stdarg.h>
 # include <unistd.h>
 
