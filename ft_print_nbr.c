@@ -6,18 +6,18 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:57 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/09 11:03:31 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 13:29:25 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int n);
-int		ft_nbr_len(int i);
+static void	ft_put_nbr(int n);
+static int	ft_nbr_len(int i);
 
 int	ft_print_nbr(int n)
 {
-	ft_putnbr(n);
+	ft_put_nbr(n);
 	return (ft_nbr_len(n));
 }
 
@@ -38,7 +38,7 @@ int	ft_nbr_len(int i)
 	return (len);
 }
 
-void	ft_putnbr(int n)
+void	ft_put_nbr(int n)
 {
 	long	nb;
 
@@ -49,7 +49,7 @@ void	ft_putnbr(int n)
 		nb *= -1;
 	}
 	if (nb >= 10)
-		ft_putnbr(nb / 10);
+		ft_put_nbr(nb / 10);
 	nb = nb % 10 + '0';
 	write(1, &nb, 1);
 }

@@ -6,13 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:59 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/09 11:14:52 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 13:29:44 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_unbr_len(unsigned int i);
+static int	ft_unbr_len(unsigned int i);
 static void	ft_put_unbr(unsigned int nb);
 static void	ft_putunbr_recursion(unsigned int nb);
 

@@ -6,13 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:30:06 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/09 10:31:06 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 13:29:51 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_format(va_list args, int format)
+static int	ft_format(va_list args, int format)
 {
 	int	print_len;
 

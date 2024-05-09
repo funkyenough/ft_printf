@@ -6,14 +6,14 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:35:11 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/09 11:24:06 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 13:29:34 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_ptr_len(unsigned long long i);
-void	ft_putptr(unsigned long long num);
+static int	ft_ptr_len(unsigned long long i);
+static void	ft_putptr(unsigned long long num);
 
 int	ft_print_ptr(void *p)
 {
