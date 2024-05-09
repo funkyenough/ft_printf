@@ -6,21 +6,38 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:55 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/07 15:11:45 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 11:12:49 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static int	ft_hex_len(int nbr);
 static void	ft_put_hex(int nbr, int is_upper);
 static void	ft_put_hex_recursion(long nbr, char *str, int digits);
 
 int	ft_print_hex(int nbr, int is_upper)
 {
 	ft_put_hex(nbr, is_upper);
-	return (PREFIX_LENGTH + POINTER_LENGTH);
+	return (ft_hex_len(nbr));
 }
 
+int	ft_hex_len(int nbr)
+{
+	unsigned int	unbr;
+	int				len;
+
+	len = 0;
+	if (nbr == 0)
+		return (1);
+	unbr = (unsigned int)nbr;
+	while (unbr != 0)
+	{
+		len++;
+		unbr /= 16;
+	}
+	return (len);
+}
 static void	ft_put_hex(int nbr, int is_upper)
 {
 	int				digits;

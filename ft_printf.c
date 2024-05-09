@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:30:06 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/09 10:16:07 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 10:31:06 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_printf(const char *str, ...)
 		if (*str == '%')
 		{
 			str++;
-			print_len += ft_format(args, *(str++));
+			print_len += ft_format(args, *str);
 		}
 		else
 			print_len += ft_print_char(*(const char *)str);
@@ -56,52 +56,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (print_len);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	 if (__STDC_VERSION__ >= 201710L)
-        printf("We are using C18!\n");
-    else if (__STDC_VERSION__ >= 201112L)
-        printf("We are using C11!\n");
-    else if (__STDC_VERSION__ >= 199901L)
-        printf("We are using C99!\n");
-    else
-        printf("We are using C89/C90!\n");
-	// char str[] = "Hello, World";
-	int myret;
-	int ogret;
-
-	ft_printf("%c%c%c\n", 'H', 'e', 'l');
-	myret = ft_printf("%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 'H', 'e', 'l', 'l', 'o', ' ',
-	'W', 'o', 'r', 'l', 'd', '!', '\0');
-	printf("%d\n", myret);
-	ogret = printf("%c%c%c%c%c%c%c%c%c%c%c%c%c\n", 'H', 'e', 'l', 'l', 'o', ' ',
-	'W', 'o', 'r', 'l', 'd', '!', '\0');
-	printf("%d\n", ogret);
-
-	// myret = ft_printf("%s\n", "Hello, World!");
-	// printf("%d\n", myret);
-	// ogret = printf("%s\n", "Hello, World!");
-	// printf("%d\n", ogret);
-
-	// myret = ft_printf("%d\n", 12345678);
-	// printf("%d\n", myret);
-	// ogret = printf("%d\n", 12345678);
-	// printf("%d\n", ogret);
-
-
-	// ft_printf("%p\n", str);
-	// ft_printf("%u\n", 4294967295);
-	// ft_printf("%x\n", -12345);
-	// printf("%x\n", -12345);
-	// ft_printf("%x\n", 123450000);
-	// printf("%x\n", 123450000);
-	// ft_printf("%X\n", -12345);
-	// printf("%X\n", -12345);
-	// ft_printf("%X\n", 123450000);
-	// printf("%X\n", 123450000);
-	return (0);
 }

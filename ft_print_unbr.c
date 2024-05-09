@@ -6,20 +6,37 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:59 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/07 14:56:13 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 11:14:52 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_nbr_len(int i);
-void	ft_put_unbr(unsigned int nb);
-void	ft_putunbr_recursion(unsigned int nb);
+int			ft_unbr_len(unsigned int i);
+static void	ft_put_unbr(unsigned int nb);
+static void	ft_putunbr_recursion(unsigned int nb);
 
 int	ft_print_unbr(unsigned int n)
 {
 	ft_put_unbr(n);
-	return (ft_nbr_len(n));
+	return (ft_unbr_len(n));
+}
+
+int	ft_unbr_len(unsigned int i)
+{
+	int	len;
+
+	len = 0;
+	if (i == 0)
+		return (1);
+	else if (i < 0)
+		len++;
+	while (i != 0)
+	{
+		i /= 10;
+		len++;
+	}
+	return (len);
 }
 
 void	ft_put_unbr(unsigned int nb)

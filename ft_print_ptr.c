@@ -6,12 +6,13 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:35:11 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/07 15:25:09 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 11:20:24 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int		ft_ptr_len(unsigned long long i);
 void	ft_putptr(unsigned long long num);
 
 int	ft_print_ptr(void *p)
@@ -26,9 +27,23 @@ int	ft_print_ptr(void *p)
 		return (PREFIX_LENGTH + 1);
 	}
 	ft_putptr(ptr);
-	return (PREFIX_LENGTH + POINTER_LENGTH);
+	return (PREFIX_LENGTH + ft_ptr_len((unsigned long long)p));
 }
 
+int	ft_ptr_len(unsigned long long i)
+{
+	int	len;
+
+	len = 0;
+	if (i == 0)
+		return (1);
+	while (i != 0)
+	{
+		i /= 16;
+		len++;
+	}
+	return (len);
+}
 void	ft_putptr(unsigned long long num)
 {
 	if (num >= 16)

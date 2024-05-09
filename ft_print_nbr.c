@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:57 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/08 16:14:21 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 11:03:31 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ int	ft_nbr_len(int i)
 	int	len;
 
 	len = 0;
-	if (i < 0)
+	if (i == 0)
+		return (1);
+	else if (i < 0)
 		len++;
 	while (i != 0)
 	{
