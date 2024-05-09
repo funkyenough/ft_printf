@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:30:06 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/08 20:45:35 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/05/09 10:16:07 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,14 @@ int	ft_printf(const char *str, ...)
 
 int	main(void)
 {
+	 if (__STDC_VERSION__ >= 201710L)
+        printf("We are using C18!\n");
+    else if (__STDC_VERSION__ >= 201112L)
+        printf("We are using C11!\n");
+    else if (__STDC_VERSION__ >= 199901L)
+        printf("We are using C99!\n");
+    else
+        printf("We are using C89/C90!\n");
 	// char str[] = "Hello, World";
 	int myret;
 	int ogret;

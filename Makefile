@@ -6,7 +6,7 @@
 #    By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/07 13:30:00 by yinhong           #+#    #+#              #
-#    Updated: 2024/05/08 16:04:49 by yinhong          ###   ########.fr        #
+#    Updated: 2024/05/09 10:21:22 by yinhong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,10 @@ $%.o : $%.c
 
 exec : $(OBJS)
 	$(CC) $(CFLAGS) -o $(EXEC) $(OBJS)
+	@echo "\nOutput of printf:\n-----------------------"
+	@./ft_printf
+	@echo "-----------------------"
+	make fclean
 
 clean:
 	$(RM) $(OBJS)
