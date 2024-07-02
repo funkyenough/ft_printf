@@ -54,7 +54,7 @@ void	ft_putptr(unsigned long long num)
 	}
 	else
 	{
-		if (0 <= num && num <= 9)
+		if (num <= 9)
 			ft_putchar_fd(num + '0', 1);
 		else
 			ft_putchar_fd(num - 10 + 'a', 1);

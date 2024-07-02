@@ -29,8 +29,6 @@ int	ft_unbr_len(unsigned int i)
 	len = 0;
 	if (i == 0)
 		return (1);
-	else if (i < 0)
-		len++;
 	while (i != 0)
 	{
 		i /= 10;
