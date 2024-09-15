@@ -6,7 +6,7 @@
 #    By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/07 13:30:00 by yinhong           #+#    #+#              #
-#    Updated: 2024/05/09 10:52:13 by yinhong          ###   ########.fr        #
+#    Updated: 2024/09/15 16:27:38 by yinhong          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ exec : $(OBJS)
 	$(CC) $(CFLAGS) -c main.c -o main.o
 	$(CC) $(CFLAGS) -o $(EXEC) $(OBJS) main.o
 	@echo "\nOutput of printf:\n-----------------------"
-	@./ft_printf
+	@./ft_printf > /dev/null 2> test.txt
 	@echo "-----------------------"
 	make fclean
 

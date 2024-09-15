@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:53 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/09 11:19:27 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/09/15 16:24:43 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@
 # include <unistd.h>
 # include <stdint.h>
 
-int		ft_printf(const char *str, ...);
-int		ft_print_char(const char c);
-int		ft_print_hex(int nbr, int is_upper);
-int		ft_print_nbr(int n);
-int		ft_print_ptr(void *p);
-int		ft_print_str(const char *str);
-int		ft_print_unbr(unsigned int n);
+int		ft_printf(int fd, const char *str, ...);
+int		ft_print_char(int fd, const char c);
+int		ft_print_hex(int fd, int nbr, int is_upper);
+int		ft_print_nbr(int fd, int n);
+int		ft_print_ptr(int fd, void *p);
+int		ft_print_str(int fd, const char *str);
+int		ft_print_unbr(int fd, unsigned int n);
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(int fd, char c);
+void	ft_putstr_fd(int fd, char *s);
 size_t	ft_strlen(const char *s);
 
 #endif

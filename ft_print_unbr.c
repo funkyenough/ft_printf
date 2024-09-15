@@ -6,19 +6,19 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:59 by yinhong           #+#    #+#             */
-/*   Updated: 2024/05/09 13:29:44 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/09/15 16:05:15 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 static int	ft_unbr_len(unsigned int i);
-static void	ft_put_unbr(unsigned int nb);
-static void	ft_putunbr_recursion(unsigned int nb);
+static void	ft_put_unbr(int fd, unsigned int nb);
+static void	ft_putunbr_recursion(int fd, unsigned int nb);
 
-int	ft_print_unbr(unsigned int n)
+int	ft_print_unbr(int fd, unsigned int n)
 {
-	ft_put_unbr(n);
+	ft_put_unbr(fd, n);
 	return (ft_unbr_len(n));
 }
 
@@ -37,24 +37,24 @@ int	ft_unbr_len(unsigned int i)
 	return (len);
 }
 
-void	ft_put_unbr(unsigned int nb)
+void	ft_put_unbr(int fd, unsigned int nb)
 {
 	if (nb == 0)
 	{
-		write(1, "0", 1);
+		write(fd, "0", 1);
 		return ;
 	}
-	ft_putunbr_recursion(nb);
+	ft_putunbr_recursion(fd, nb);
 }
 
-void	ft_putunbr_recursion(unsigned int nb)
+void	ft_putunbr_recursion(int fd, unsigned int nb)
 {
 	char	mod;
 
 	if (nb != 0)
 	{
 		mod = nb % 10 + '0';
-		ft_putunbr_recursion(nb / 10);
-		write(1, &mod, 1);
+		ft_putunbr_recursion(fd, nb / 10);
+		write(fd, &mod, 1);
 	}
 }
