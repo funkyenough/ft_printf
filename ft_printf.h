@@ -6,7 +6,7 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 13:29:53 by yinhong           #+#    #+#             */
-/*   Updated: 2024/09/15 16:24:43 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/09/15 16:37:35 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int		ft_print_ptr(int fd, void *p);
 int		ft_print_str(int fd, const char *str);
 int		ft_print_unbr(int fd, unsigned int n);
 
-void	ft_putchar_fd(int fd, char c);
-void	ft_putstr_fd(int fd, char *s);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlen(const char *s);
 
 #endif

@@ -6,18 +6,18 @@
 /*   By: yinhong <yinhong@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:04:57 by yinhong           #+#    #+#             */
-/*   Updated: 2024/09/15 16:22:17 by yinhong          ###   ########.fr       */
+/*   Updated: 2024/09/15 16:37:13 by yinhong          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(int fd, char c)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void	ft_putstr_fd(int fd, char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
